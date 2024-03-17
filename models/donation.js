@@ -38,6 +38,8 @@ const donationSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	latitude:String,
+	longitude:String,
 	donorToAdminMsg: String,
 	adminToAgentMsg: String,
 	collectionTime: {

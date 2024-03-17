@@ -24,6 +24,7 @@ router.get("/donor/donate", middleware.ensureDonorLoggedIn, (req,res) => {
 router.post("/donor/donate", middleware.ensureDonorLoggedIn, async (req,res) => {
 	try
 	{
+		console.log(req.body);
 		const donation = req.body.donation;
 		donation.status = "pending";
 		donation.donor = req.user._id;

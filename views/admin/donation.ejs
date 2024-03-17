@@ -26,12 +26,12 @@
             
             <div class="mb-2">
                 <span>Time of cooking:</span>
-                <span><%= donation.cookingTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+                <span><%= donation.cookingTime ? donation.cookingTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) : 'N/A' %></span>
             </div>
             
             <div class="mb-2">
                 <span>Expiration Date:</span>
-                <span><%= donation.expirationDate.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+                <span><%= donation.expirationDate ? donation.expirationDate.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) : 'N/A' %></span>
             </div>
             
             <div class="mb-2">
@@ -73,7 +73,7 @@
             <% if(donation.status == "collected") { %>
                 <div class="mb-2">
                     <span>Collection time:</span>
-                    <span><%= donation.collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+                    <span><%= donation.collectionTime ? donation.collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) : 'N/A' %></span>
                 </div>
             <% } %>
             
