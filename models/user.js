@@ -31,7 +31,9 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		enum: ["admin", "donor", "agent"],
 		required: true
-	}
+	},
+	latitude:String,
+	longitude:String
 });
 
 const User = mongoose.model("users", userSchema);

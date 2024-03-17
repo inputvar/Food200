@@ -12,8 +12,8 @@ router.get("/auth/signup", middleware.ensureNotLoggedIn, (req,res) => {
 });
 
 router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
-	
-	const { firstName, lastName, email, password1, password2, role } = req.body;
+	console.log(req.body);
+	const { firstName, lastName, email, password1, password2, role,latitude,longitude } = req.body;
 	let errors = [];
 	
 	if (!firstName || !lastName || !email || !password1 || !password2) {
@@ -28,7 +28,7 @@ router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 	if(errors.length > 0) {
 		return res.render("auth/signup", {
 			title: "User Signup",
-			errors, firstName, lastName, email, password1, password2
+			errors, firstName, lastName, email, password1, password2,latitude,longitude
 		});
 	}
 	
@@ -40,11 +40,11 @@ router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 			errors.push({msg: "This Email is already registered. Please try another email."});
 			return res.render("auth/signup", {
 				title: "User Signup",
-				firstName, lastName, errors, email, password1, password2
+				firstName, lastName, errors, email, password1, password2,latitude,longitude
 			});
 		}
 		
-		const newUser = new User({ firstName, lastName, email, password:password1, role });
+		const newUser = new User({ firstName, lastName, email, password:password1, role,latitude,longitude });
 		const salt = bcrypt.genSaltSync(10);
 		const hash = bcrypt.hashSync(newUser.password, salt);
 		newUser.password = hash;

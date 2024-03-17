@@ -10,7 +10,7 @@ window.setTimeout(() => {
 	if(alertsWrapper) {
 		alertsWrapper.style.display = "none";
 	}
-}, 5000);
+}, 5040);
 
 
 let btn = document.querySelector("#sidebar-toggler-btn");
