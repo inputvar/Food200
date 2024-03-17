@@ -1,3 +1,16 @@
+const express = require('express');
+const expressLayouts = require('express-ejs-layouts'); // Add this line
+const session = require('express-session'); 
+const passport = require('passport');
+const flash = require('connect-flash');
+const methodOverride = require('method-override');
+const homeRoutes = require('./routes/home');
+const authRoutes = require('./routes/auth');
+const donorRoutes = require('./routes/donor');
+const adminRoutes = require('./routes/admin');
+const agentRoutes = require('./routes/agent');
+
+const app = express();
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.use("/assets", express.static(__dirname + "/assets"));
