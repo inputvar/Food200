@@ -17,4 +17,12 @@ router.get("/home/contact-us", (req, res) => {
   res.render("home/contactUs", { title: "Contact us | FOOD200" });
 });
 
+router.get("/home/ngo", (req, res) => {
+  res.render("home/ngo", { title: "NGO | FOOD200" });
+});
+
+router.get("/home/volunteer", (req, res) => {
+  res.render("home/volunteer", { title: "Volunteer | FOOD200" });
+});
+
 module.exports = router;
