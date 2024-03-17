@@ -10,7 +10,15 @@
 			<h5 class="m-0 color-theme d-inline-block">Assign agent</h5>
 		</div>
 		
-		<form action="/admin/donation/assign/<%= donation._id %>" method="POST" class="border m-4 my-3 p-4 bg-white rounded-2 shadow">
+		<form action="/admin/donation/assign/<%= donation._id %>"      
+			method="POST"
+			class="w-75 border ms-3 my-3 p-4 bg-white rounded-2"
+			style="
+			  min-width: 400px;
+			  max-width: 600px;
+			  border-width: 1px !important;
+			  border-color: #141e46 !important;
+			">
 			
 			<div class="row">
 				<div class="mb-4 col-sm-4">
